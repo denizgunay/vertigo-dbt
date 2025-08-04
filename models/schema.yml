@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: daily_metrics
+    description: >
+      A daily aggregated model summarizing user activity, revenues, and gameplay metrics
+      by country and platform. The source data is the `raw.data` table.
+    columns:
+      - name: event_date
+        description: The date of the event (daily granularity).
+
+      - name: country
+        description: Country code of the user (e.g., US, TR).
+
+      - name: platform
+        description: The platform the user played on (e.g., iOS, Android).
+
+      - name: dau
+        description: Daily Active Users (distinct count of user_id).
+
+      - name: total_iap_revenue
+        description: Total in-app purchase revenue.
+
+      - name: total_ad_revenue
+        description: Total ad revenue.
+
+      - name: arpdau
+        description: Average revenue per daily active user (IAP + ads).
+
+      - name: matches_started
+        description: Total number of matches started on that day.
+
+      - name: match_per_dau
+        description: Average number of matches started per daily active user.
+
+      - name: win_ratio
+        description: Ratio of victories to total matches ended.
+
+      - name: defeat_ratio
+        description: Ratio of defeats to total matches ended.
+
+      - name: server_error_per_dau
+        description: Average number of server connection errors per daily active user.
